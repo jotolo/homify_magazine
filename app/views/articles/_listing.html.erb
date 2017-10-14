@@ -1,0 +1,30 @@
+
+    <%- model_class = Article -%>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th><%= model_class.human_attribute_name(:id) %></th>
+        <th><%= model_class.human_attribute_name(:title) %></th>
+        <th><%= model_class.human_attribute_name(:description) %></th>
+        <th><%= model_class.human_attribute_name(:author) %></th>
+        <th><%= model_class.human_attribute_name(:Published) %></th>
+        <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      </tr>
+      </thead>
+      <tbody>
+      <% smart_listing.collection.each do |article| %>
+          <tr>
+            <td><%= link_to article.id, article_path(article) %></td>
+            <td><%= article.title %></td>
+            <td><%= article.description %></td>
+            <td><%= article.try(:user).try(:name) %></td>
+            <td><%= article.created_at.to_formatted_s(:short) %></td>
+            <td>
+              <%= link_to t('.show', :default => t("helpers.links.show")),
+                          article_path(article), :class => 'btn btn-default btn-xs' %>
+            </td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+    <%= smart_listing.paginate %>

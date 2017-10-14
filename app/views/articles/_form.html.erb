@@ -30,9 +30,27 @@
       <%=f.error_span(:description) %>
     </div>
 
+    <div class="form-group">
+      <%= f.label :tags, :class => 'control-label col-lg-2' %>
+      <div class="col-lg-10">
+        <%= f.select(:tag_ids, Tag.all.collect {|t| [ t.name, t.id ] }, {}, { :multiple => true, :size => 5 }) %>
+      </div>
+      <%=f.error_span(:tag_ids) %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :sub_tags, :class => 'control-label col-lg-2' %>
+      <div class="col-lg-10">
+        <%= f.select(:sub_tag_ids, SubTag.all.collect {|st| [ st.name, st.id ] }, {}, { :multiple => true, :size => 5 }) %>
+      </div>
+      <%=f.error_span(:sub_tag_ids) %>
+    </div>
     <div>
       <%= f.hidden_field :user_id, value: user_signed_in? ? current_user.id : nil %>
     </div>
+
+
+
 
 
     <div class="form-group">
@@ -44,3 +62,4 @@
     </div>
 
 <% end %>
+
