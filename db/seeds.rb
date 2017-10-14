@@ -24,7 +24,7 @@ SubTag.create(name: 'pop', tag_id: music.id)
 SubTag.create(name: 'rock', tag_id: music.id)
 SubTag.create(name: 'rap', tag_id: music.id)
 
-tourism = Tag.create(name: 'Sports')
+tourism = Tag.create(name: 'tourism')
 SubTag.create(name: 'natural', tag_id: tourism.id)
 SubTag.create(name: 'city', tag_id: tourism.id)
 SubTag.create(name: 'health', tag_id: tourism.id)
