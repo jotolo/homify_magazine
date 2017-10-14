@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Things you need to do to install and run this project:
 
-Things you may want to cover:
+* Install Ruby 2.4.0
 
-* Ruby version
+* ```gem install bundler```
 
-* System dependencies
+* ```bundle install```
 
-* Configuration
+* ```rake db:create```
 
-* Database creation
+* ```rake db:migrate```
 
-* Database initialization
+* ```rake db:seed```  (DO NOT FORGET TO DO THIS)
 
-* How to run the test suite
+* ```rails server```
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+In this project you have a route ```/admin```. This route is only for test purposes. It can be used to check the data in DB.
