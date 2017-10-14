@@ -13,10 +13,11 @@ class Article < ApplicationRecord
   end
 
   def match?(filter)
-        self.title.downcase.include?(filter) ||
+    filter = filter.downcase
+    self.title.downcase.include?(filter) ||
         self.description.downcase.include?(filter) ||
         (self.try(:user).try(:name) && self.try(:user).try(:name).downcase.include?(filter)) ||
-        self.tags.any?{|t|t.name.include?(filter)} ||
-        self.sub_tags.any?{|st| st.name.include?(filter)}
+        self.tags.any?{|t|t.name.downcase.include?(filter)} ||
+        self.sub_tags.any?{|st| st.name.downcase.include?(filter)}
   end
 end

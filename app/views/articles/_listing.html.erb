@@ -7,7 +7,9 @@
         <th><%= model_class.human_attribute_name(:title) %></th>
         <th><%= model_class.human_attribute_name(:description) %></th>
         <th><%= model_class.human_attribute_name(:author) %></th>
-        <th><%= model_class.human_attribute_name(:Published) %></th>
+        <th><%= model_class.human_attribute_name(:published) %></th>
+        <th><%= model_class.human_attribute_name(:tags) %></th>
+        <th><%= model_class.human_attribute_name(:sub_tags) %></th>
         <th><%=t '.actions', :default => t("helpers.actions") %></th>
       </tr>
       </thead>
@@ -19,6 +21,8 @@
             <td><%= article.description %></td>
             <td><%= article.try(:user).try(:name) %></td>
             <td><%= article.created_at.to_formatted_s(:short) %></td>
+            <td><%= article.tags.pluck(:name).join(', ') %></td>
+            <td><%= article.sub_tags.pluck(:name).join(', ') %></td>
             <td>
               <%= link_to t('.show', :default => t("helpers.links.show")),
                           article_path(article), :class => 'btn btn-default btn-xs' %>
