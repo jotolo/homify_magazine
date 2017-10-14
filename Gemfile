@@ -54,10 +54,10 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
-gem 'devise'
-gem 'twitter-bootstrap-rails'
-gem 'jquery-rails'
-gem 'rails_admin'
-gem 'smart_listing'
-gem "font-awesome-rails"
+gem 'devise', '4.3.0'
+gem 'twitter-bootstrap-rails', '4.0.0'
+gem 'jquery-rails', '4.3.1'
+gem 'rails_admin', '1.2.0'
+gem 'smart_listing', '1.0.0'
+gem 'font-awesome-rails', '4.7.0.2'
 
